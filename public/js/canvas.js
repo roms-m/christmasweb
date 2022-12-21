@@ -5,27 +5,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = canvas.getContext('2d');
 
     //images
-    const imgBack = './../media/img/1.jpg';
-    const logoImg = './../media/img/logo.png';
+    const imgBack = './media/img/1.jpg';
+    const logoImg = './media/img/logo.png';
 
     const icons = [
         { 
-            icon: './../media/img/noche_buena.png',
-            sound: './../media/mp3/sound.mp3',
+            icon: './media/img/noche_buena.png',
+            sound: './media/mp3/sound.mp3',
             x: 20,
-            y: 540
+            y: window.innerHeight - 100
         },
         { 
-            icon: './../media/img/burrito.png',
-            sound: './../media/mp3/burrito_sabanero.mp3',
+            icon: './media/img/burrito.png',
+            sound: './media/mp3/burrito_sabanero.mp3',
             x: 150,
-            y: 530
+            y: window.innerHeight - 100
         },
         { 
-            icon: './../media/img/campana_sobre_campana.png',
-            sound: './../media/mp3/campana_sobre_campana.mp3',
+            icon: './media/img/campana_sobre_campana.png',
+            sound: './media/mp3/campana_sobre_campana.mp3',
             x: 280,
-            y: 530
+            y: window.innerHeight - 100
         }
     ]
 
@@ -76,10 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function drawCountDown(){
         const {time_remaining, REMAINING_DAYS} = updateCountdown();
 
-        ctx.clearRect(0,440, canvas.width, 50);
+        ctx.clearRect(0,window.innerHeight - 200, canvas.width, 50);
         /* ctx.fillStyle = 'black'; */
         ctx.fillStyle = '#bbe8eb';
-        ctx.fillRect(0, 440, canvas.clientWidth, 80);
+        ctx.fillRect(0, window.innerHeight - 200, canvas.clientWidth, 80);
 
         drawText({
             text: 'FALTAN',
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: 'black',
             weight: 'bolder',
             x: 120,
-            y: 515
+            y: window.innertHeight - 200
         });
     }
 
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     textSize: '16px',
                     color: 'black',
                     x: item.x,
-                    y: 610
+                    y: window.innerHeight - 20
                 });
             }
         })
