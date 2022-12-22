@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const startButton = document.querySelector('#arrow');
     const santa = document.querySelector('#santaGlobo');
- 
+    const santaLaugh = document.querySelector('.window');
 
     santa.style.width = '60%'
     santa.style.margin = 'auto'
@@ -11,9 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const santaImgHeight = -santa.clientHeight;
     
     santa.style.display = 'none'
+
+    const audio = new Audio();
     
     startButton.addEventListener('click', () => {
-        const audio = new Audio();
+        audio.pause();
         audio.src = './media/mp3/4.mp3';
         audio.play();
         
@@ -36,6 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 2);
 
+    })
+
+    santaLaugh.addEventListener('click', () => {
+        audio.pause();
+        audio.src = './media/mp3/hohoho.mp3';
+        audio.play();
     })
 
     function isSantaOutOfScreen (currentPosition) {
